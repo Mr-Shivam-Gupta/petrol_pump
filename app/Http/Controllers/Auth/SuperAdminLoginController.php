@@ -29,7 +29,12 @@ class SuperAdminLoginController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::guard('super_admin')->logout();
+        Auth::guard('web')->logout();
         return redirect()->route('super_admin.login');
+    }
+
+    public function dashboard()
+    {
+        return view('home');
     }
 }

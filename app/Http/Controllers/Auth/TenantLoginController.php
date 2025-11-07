@@ -25,7 +25,6 @@ class TenantLoginController extends Controller
             'email' => 'required|email',
             'password' => 'required|string|min:6',
         ]);
-
         // Attempt login using tenant guard
         if (Auth::guard('tenant')->attempt($credentials)) {
             // Regenerate session to prevent fixation
@@ -44,11 +43,15 @@ class TenantLoginController extends Controller
      */
     public function logout(Request $request)
     {
-        Auth::guard('tenant')->logout();
+        Auth::guard('web')->logout();
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
         return redirect()->route('tenant.login');
+    }
+    public function dashboard()
+    {
+        return view('home');
     }
 }

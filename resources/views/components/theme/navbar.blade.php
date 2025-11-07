@@ -55,33 +55,33 @@
                     </span>
                 </button>
                 @can('user_filter')
-                <form class="app-search d-none d-md-block">
-                    <meta name="csrf-token" content="{{ csrf_token() }}">
-                    <div class="position-relative">
-                        <input type="text" class="form-control" placeholder="Search employee.. (Ctrl+E)"
-                            autocomplete="off" id="empSearchOptions" value="">
-                        <span class="mdi mdi-magnify search-widget-icon"></span>
-                        <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none"
-                            id="search-close-options"></span>
-                    </div>
-                    <div class="dropdown-menu dropdown-menu-lg" id="search-dropdown">
-                        <div data-simplebar style="max-height: 320px;">
-                            <div class="dropdown-header" style="display: flex; justify-content: space-between;">
-                                <h6 class="text-overflow text-muted mb-0">Employees</h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="statusFilter" checked>
-                                    <label class="form-check-label" for="statusFilter">Active Only</label>
+                    <form class="app-search d-none d-md-block">
+                        <meta name="csrf-token" content="{{ csrf_token() }}">
+                        <div class="position-relative">
+                            <input type="text" class="form-control" placeholder="Search employee.. (Ctrl+E)"
+                                autocomplete="off" id="empSearchOptions" value="">
+                            <span class="mdi mdi-magnify search-widget-icon"></span>
+                            <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none"
+                                id="search-close-options"></span>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-lg" id="search-dropdown">
+                            <div data-simplebar style="max-height: 320px;">
+                                <div class="dropdown-header" style="display: flex; justify-content: space-between;">
+                                    <h6 class="text-overflow text-muted mb-0">Employees</h6>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="statusFilter" checked>
+                                        <label class="form-check-label" for="statusFilter">Active Only</label>
+                                    </div>
+                                </div>
+                                <div class="notification-list">
                                 </div>
                             </div>
-                            <div class="notification-list">
+                            <div class="text-center pt-3 pb-1">
+                                <a href="/admin/employees" class="btn btn-primary btn-sm">View All Employees <i
+                                        class="ri-arrow-right-line ms-1"></i></a>
                             </div>
                         </div>
-                        <div class="text-center pt-3 pb-1">
-                            <a href="/admin/employees" class="btn btn-primary btn-sm">View All Employees <i
-                                    class="ri-arrow-right-line ms-1"></i></a>
-                        </div>
-                    </div>
-                </form>
+                    </form>
                 @endcan
             </div>
             <div class="d-flex align-items-center">
@@ -106,8 +106,8 @@
                     id="notificationDropdown">
                     <button type="button"
                         class="btn btn-icon btn-topbar material-shadow-none btn-ghost-secondary rounded-circle"
-                        id="page-header-notifications-dropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                        aria-haspopup="true" aria-expanded="false">
+                        id="page-header-notifications-dropdown" data-bs-toggle="dropdown"
+                        data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
                         <i class='bx bx-bell fs-22'></i>
                         <span
                             class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">3<span
@@ -130,8 +130,8 @@
                                 <ul class="nav nav-tabs dropdown-tabs nav-tabs-custom" data-dropdown-tabs="true"
                                     id="notificationItemsTab" role="tablist">
                                     <li class="nav-item waves-effect waves-light">
-                                        <a class="nav-link active" data-bs-toggle="tab" href="#all-noti-tab" role="tab"
-                                            aria-selected="true">
+                                        <a class="nav-link active" data-bs-toggle="tab" href="#all-noti-tab"
+                                            role="tab" aria-selected="true">
                                             All (4)
                                         </a>
                                     </li>
@@ -265,7 +265,8 @@
                                         </div>
                                     </div>
                                     <div class="my-3 text-center view-all">
-                                        <button type="button" class="btn btn-soft-success waves-effect waves-light">View
+                                        <button type="button"
+                                            class="btn btn-soft-success waves-effect waves-light">View
                                             All Notifications <i class="ri-arrow-right-line align-middle"></i></button>
                                     </div>
                                 </div>
@@ -379,19 +380,22 @@
                                         </div>
                                     </div>
                                     <div class="my-3 text-center view-all">
-                                        <button type="button" class="btn btn-soft-success waves-effect waves-light">View
+                                        <button type="button"
+                                            class="btn btn-soft-success waves-effect waves-light">View
                                             All Messages <i class="ri-arrow-right-line align-middle"></i></button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade p-4" id="alerts-tab" role="tabpanel" aria-labelledby="alerts-tab">
+                            <div class="tab-pane fade p-4" id="alerts-tab" role="tabpanel"
+                                aria-labelledby="alerts-tab">
                             </div>
                             <div class="notification-actions" id="notification-actions">
                                 <div class="d-flex text-muted justify-content-center">
                                     Select
                                     <div id="select-content" class="text-body fw-semibold px-1">0</div>
                                     Result <button type="button" class="btn btn-link link-danger p-0 ms-3"
-                                        data-bs-toggle="modal" data-bs-target="#removeNotificationModal">Remove</button>
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#removeNotificationModal">Remove</button>
                                 </div>
                             </div>
                         </div>
@@ -407,35 +411,34 @@
                         id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
                         <span class="d-flex align-items-center">
-                            <img class="rounded-circle header-profile-user"
-                                src="{{ URL::to('/') }}/custom/user.png"
+                            <img class="rounded-circle header-profile-user" src="{{ URL::to('/') }}/custom/user.png"
                                 alt="Header Avatar">
 
                             <span class="text-start ms-xl-2">
-                                @if(Auth::check())
-                                <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">
-                                    {{ Auth::user()->name }}
-                                </span>
+                                @if (Auth::check())
+                                    <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">
+                                        {{ Auth::user()->name }}
+                                    </span>
                                 @else
-                                <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">
-                                    Guest
-                                </span>
+                                    <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">
+                                        Guest
+                                    </span>
                                 @endif
                             </span>
                         </span>
                     </button>
                     <div class="dropdown-menu dropdown-menu-end">
-                        @if(Auth::check())
-                        <h6 class="dropdown-header">Welcome {{ Auth::user()->name }}!</h6>
+                        @if (Auth::check())
+                            <h6 class="dropdown-header">Welcome {{ Auth::user()->name }}!</h6>
                         @else
-                        <h6 class="dropdown-header">Welcome Guest!</h6>
+                            <h6 class="dropdown-header">Welcome Guest!</h6>
                         @endif
 
-                        @if(session('back_office') === true)
-                        <a class="dropdown-item" href="">
-                            <i class="mdi mdi-briefcase text-muted fs-16 align-middle me-1"></i>
-                            <span class="align-middle">Back Office</span>
-                        </a>
+                        @if (session('back_office') === true)
+                            <a class="dropdown-item" href="">
+                                <i class="mdi mdi-briefcase text-muted fs-16 align-middle me-1"></i>
+                                <span class="align-middle">Back Office</span>
+                            </a>
                         @endif
                         <a class="dropdown-item" href=""><i
                                 class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
@@ -445,23 +448,29 @@
                                 class="align-middle">Help</span></a>
                         <div class="dropdown-divider"></div>
                         @can('settings_overview')
-                        <a class="dropdown-item d-flex justify-content-between align-items-center" href="/settings">
-                            <div>
-                                <i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i>
-                                <span class="align-middle">Settings</span>
-                            </div>
-                            <span class="badge bg-success-subtle text-success mt-1">New</span>
-                        </a>
+                            <a class="dropdown-item d-flex justify-content-between align-items-center" href="/settings">
+                                <div>
+                                    <i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Settings</span>
+                                </div>
+                                <span class="badge bg-success-subtle text-success mt-1">New</span>
+                            </a>
                         @endcan
                         <a class="dropdown-item" href="#"><i
                                 class="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span
                                 class="align-middle">Lock screen</span></a>
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <button type="submit" class="dropdown-item">
-                                <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
-                                <span class="align-middle" data-key="t-logout">Logout</span>
-                            </button>
+                        @if (Auth::guard('super_admin')->check())
+                            <form method="POST" action="{{ route('super_admin.logout') }}">
+                            @elseif(Auth::guard('tenant')->check())
+                                <form method="POST" action="{{ route('tenant.logout') }}">
+                                @else
+                                    <form method="POST" action="{{ route('logout') }}">
+                        @endif
+                        @csrf
+                        <button type="submit" class="dropdown-item">
+                            <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
+                            <span class="align-middle" data-key="t-logout">Logout</span>
+                        </button>
                         </form>
                     </div>
                 </div>
